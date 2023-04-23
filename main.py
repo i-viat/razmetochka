@@ -8,7 +8,7 @@ import pandas as pd
 config = dotenv_values(".env")
 
 if __name__ == '__main__':
-    # тут можно загрузить модель или создать новую
+    # you can upload a model or create a new one here
     # advisor = Advisor().load(f"{config['store_models']}/test.bin")
     advisor = Advisor(
         vectorizer=TfidfVectorizer(max_features=10000),
@@ -21,18 +21,18 @@ if __name__ == '__main__':
     train = data.head(1000)
     test = data.tail(1000)
 
-    # подготавлеваем векторизатор
+    # we prepare the vectorizer
     advisor.fit_vectorizer(data.text)
-    # обучаем модель
+    # model training
     advisor.fit_model(train.text, train.label)
 
-    # проверяем скор можно сделать одну метрику
+    # checking the score
     score = advisor.classification_report(test.text, test.label)
 
-    # возвращаем следующий чанк
+    # return the next chunk
     new_chunk = advisor.predict_proba(test.text).head(int(config['chunk_size']))
 
     print(score)
 
-    # тут можно сохранить модель со всеми весами
+    # here you can save the model with all weights
     # advisor.save(f"conf['models']test.bin")
