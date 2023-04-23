@@ -1,9 +1,9 @@
 # razmetochka
 
-В случае запуска приложения на локальной машине требуется установить необходимые модули:
+In the case of running the application on the local machine, the necessary modules need to be installed:
 
 `python3 install -r requirements.txt`
 
-Затем запустить приложение командой:
+Then start the application with the command:
 
 `streamlit run markup_gui.py`
