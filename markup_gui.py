@@ -245,7 +245,7 @@ def markup_func(val_samp, test_samp):
                 
         else:
             st.success(
-                f"🎈 The frame of the corpus is complete! A total of {len(st.session_state.annotations)} are marked"
+                f"🎈 The marking of the corpus is complete! A total of {len(st.session_state.annotations)} are marked"
             )
             obj = model_learn(annotated, test_samp)
             annotated.columns = [str(select_col), 'class']
@@ -297,7 +297,7 @@ def markup_test():
     else:
         if st.session_state.annotations == {}:
             st.success(
-                    f"🎈 Marking of test and validation samples is completed! Total marked up {len(st.session_state.annotations_test)} fillings"
+                    f"🎈 The marking of test and validation samples is completed! Total marked up {len(st.session_state.annotations_test)} fillings"
                 )
 
             if st.session_state.val_sample.empty:
