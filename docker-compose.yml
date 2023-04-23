@@ -1,0 +1,10 @@
+version: '3.0'
+services:
+  razmetochka:
+    image: razm
+    build:
+      context: .
+    container_name: razmetochka
+    hostname: razmetochka
+    ports:
+      - "8601:8601"
