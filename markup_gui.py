@@ -11,7 +11,6 @@ import shutil
 from lib.advisor import Advisor
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import SVC
-from dotenv import dotenv_values
 
 
                
